@@ -81,7 +81,7 @@ paraphrase-multilingual-MiniLM-L12-v2 разработана для работы
 
 <h2 align="left">Видеопрезентация проекта</h2>
 
-[![Видеопрезентация нашего проекта](https://www.interfax.ru/ftproot/textphotos/2020/01/09/ros700.jpg)](https://drive.google.com/file/d/1I9I_QA6rVmppv5XHvSp4kd-eZpXOhqje/view)
+[![Видеопрезентация нашего проекта](https://www.interfax.ru/ftproot/textphotos/2020/01/09/ros700.jpg)](https://drive.google.com/file/d/1r-uHWPG4qMMLmt_eGVrqwbIhPWhuEyHY/view)
 ## Работа с Backend приложением
 
 Установка зависимостей
