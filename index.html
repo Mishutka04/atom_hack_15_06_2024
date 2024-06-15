@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Росатом</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: #fff;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header img {
+            width: 100px;
+            vertical-align: middle;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .banner {
+            position: relative;
+            color: white;
+            text-align: center;
+            width: 100%;
+            margin-top: 60px;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .grid-container {
+            width: 66%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .grid div {
+            padding: 20px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            aspect-ratio: 1 / 1;
+            border-radius: 5px;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0.9;
+            position: relative;
+        }
+        .grid div:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .grid div:before {
+            content: attr(data-number);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .grid div:nth-child(1) { background: linear-gradient(to bottom right, #1e90ff, #87cefa); }
+        .grid div:nth-child(2) { background: linear-gradient(to bottom right, #32cd32, #7cfc00); }
+        .grid div:nth-child(3) { background: linear-gradient(to bottom right, #ffa500, #ffdab9); color: black; }
+        .grid div:nth-child(4) { background: linear-gradient(to bottom right, #ff4500, #ff6347); }
+        .grid div:nth-child(5) { background: linear-gradient(to bottom right, #4682b4, #b0c4de); }
+        .grid div:nth-child(6) { background: linear-gradient(to bottom right, #2e8b57, #3cb371); }
+        .grid div:nth-child(7) { background: linear-gradient(to bottom right, #00ced1, #20b2aa); }
+        .grid div:nth-child(8) { background: linear-gradient(to bottom right, #1e90ff, #4169e1); }
+        .social {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 66%;
+        }
+        .social img {
+            width: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .social img:hover {
+            transform: scale(1.2);
+        }
+        .news-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            width: 66%;
+            margin-bottom: 40px;
+        }
+        .news-item {
+            background: #fff;
+            padding: 20px;
+            width: 23%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+        .news-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #007BFF;
+            font-weight: 500;
+        }
+        .news-item p {
+            margin: 0;
+            color: #555;
+        }
+        .news-item .date {
+            font-size: 0.8em;
+            color: #aaa;
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 400;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        footer a {
+            color: #87cefa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="https://www.rosatom.ru//upload/new_logo_main/Rosatom_Vertical_ru.svg" alt="Росатом">
+            <a href="#">О Росатоме</a>
+            <a href="#">Направления деятельности</a>
+            <a href="#">Устойчивое развитие</a>
+            <a href="#">Журналистам</a>
+            <a href="#">Поставщикам</a>
+            <a href="#">Карьера</a>
+        </nav>
+    </header>
+    <div class="banner">
+        <img src="https://www.rosatom.ru/upload/medialibrary/a56/a563ea52572fc1c26af229aab20a3992.jpg" alt="Ядерная энергетика">
+        <h1>Ядерная энергетика</h1>
+    </div>
+    <div class="grid-container">
+        <div class="grid">
+            <div data-number="01">Добыча урана</div>
+            <div data-number="02">Обогащение урана</div>
+            <div data-number="03">Проектирование, инжиниринг и строительство АЭС</div>
+            <div data-number="04">Генерация электроэнергии</div>
+            <div data-number="05">Сервис и обслуживание АЭС</div>
+            <div data-number="06">Ядерная и радиационная безопасность</div>
+            <div data-number="07">Атомные станции большой мощности</div>
+            <div data-number="08">Атомные станции малой мощности</div>
+        </div>
+    </div>
+    <div class="social">
+        <span>Поделиться:</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Twitter">
+    </div>
+    </div>
+    <div class="news-section">
+        <div class="news-item">
+            <span class="date">27 мая 2024</span>
+            <h3>Российская Федерация и Узбекистан подписали соглашение о строительстве атомной станции малой мощности</h3>
+            <p>Подробнее</p>
+        </div>
+        <div class="news-item">
+            <span class="date">7 июня 2024</span>
+            <h3>Павильон «Атом» приглашает на эждень «Зеленый атом»</h3>
+            <p>Подробнее</p>
+        </div>
+        <div class="news-item">
+            <span class="date">6 июня 2024</span>
+            <h3>«Атомэнергопром» и ВТБ подписали кредитное соглашение 50 млрд руб.</h3>
+            <p>Подробнее</p>
+        </div>
+        <div class="news-item">
+            <span class="date">21 мая 2024</span>
+            <h3>Председатель Правительства РФ Михаил Мишустин посетил Саров</h3>
+            <p>Подробнее</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2008-2024. Все права защищены. Государственная корпорация по атомной энергии «Росатом»</p>
+        <p>При использовании материалов ссылка на сайт <a href="https://www.rosatom.ru">www.rosatom.ru</a> обязательна</p>
+    </footer>
+</body>
+</html>

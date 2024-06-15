@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gradio-client = "*"
+django = "*"
+djangorestframework = "*"
+django-environ = "*"
+flake8 = "*"
+gunicorn = "*"
+django-cors-headers = "*"
+django-filter = "*"
+drfpasswordless = "*"
+requests = "*"
+pandas = "*"
+xlrd = "*"
+xlwt = "*"
+openpyxl = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
